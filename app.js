@@ -1,6 +1,7 @@
 let submitButton = document.querySelector("button");
 let inputValue = document.querySelector("input");
 let guess = 70;
+let previousGuesses = [];
 
 submitButton.addEventListener('click', e=>{
     let input = document.querySelector("input");
@@ -9,6 +10,7 @@ submitButton.addEventListener('click', e=>{
     console.log('input value: ', inputValue);
     if(!(inputValue>=0 && inputValue<=100)){
         wrongInput(inputValue);
+        return
     }else if(inputValue<guess){
         inputHint(true);
     }else if(inputValue>guess){
@@ -16,8 +18,23 @@ submitButton.addEventListener('click', e=>{
     }else{
         successfulGuess();
     }
+    previousGuesses.push(inputValue);
+    showGuesses();
     e.preventDefault();
 })
+
+function showGuesses(){
+    let div = document.getElementById("past-guess-block");
+    div.innerHTML = '';
+    previousGuesses.forEach(g=>{
+        let p = document.createElement("p");
+        p.innerHTML = `${g}`;
+        p.classList.add('square');
+
+        div.appendChild(p);
+    })
+    console.log('30 hit')
+}
 
 function successfulGuess(){
     let successDiv = document.getElementById("success-block")
