@@ -5,6 +5,16 @@
     padding: 0;
 }
 
+.heading{
+    font-size: 2rem;
+    text-align: center;
+    color: green;
+    margin: 2rem;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+
 .previous-guess{
     background-color: yellowgreen;
     height: 3rem;
