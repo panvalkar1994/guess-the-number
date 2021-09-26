@@ -1,7 +1,16 @@
 let submitButton = document.querySelector("button");
 let inputValue = document.querySelector("input");
-let guess = 70;
+let guess = Math.round(Math.random()*100);
 let previousGuesses = [];
+let attempts = 0;
+const MAX_ATTEMPTS = 10;
+
+function gameReset(){
+    guess = Math.round(Math.random()*100);
+    previousGuesses = [];
+    attempts = 0;
+    console.log('game reset')
+}
 
 submitButton.addEventListener('click', e=>{
     let input = document.querySelector("input");
@@ -15,10 +24,15 @@ submitButton.addEventListener('click', e=>{
         inputHint(true);
     }else if(inputValue>guess){
         inputHint(false);
-    }else{
-        successfulGuess();
     }
     previousGuesses.push(inputValue);
+    if(inputValue==guess){
+        successfulGuess();
+    }
+    attempts++;
+    if(attempts>=MAX_ATTEMPTS){
+        gameReset();
+    }
     showGuesses();
     e.preventDefault();
 })
@@ -40,6 +54,7 @@ function successfulGuess(){
     let successDiv = document.getElementById("success-block")
     successDiv.classList.remove("hide");
     successDiv.innerHTML = "You Guessed Successfully";
+    gameReset();
 }
 
 function inputHint(isSmallInput){
