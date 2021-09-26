@@ -1,0 +1,86 @@
+
+*{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.previous-guess{
+    background-color: antiquewhite;
+    border: 1px solid yellow;
+    display: none;
+}
+
+.err{
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    padding-left: 2rem;
+    border-radius: 0.8rem;
+}
+
+.hint{
+    background-color: skyblue;
+    /* color: white; */
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    padding-left: 2rem;
+    border-radius: 0.8rem;
+}
+
+.success{
+    background-color: green;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    padding-left: 2rem;
+    border-radius: 0.8rem;
+}
+
+.input-card{
+    background-color: #aaa;
+    height: 3rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction:row;
+    border-radius: .2rem;
+    margin: .5rem;
+}
+
+
+input{
+    width: 80%;
+    border-radius: .2rem;
+    border: none;
+    padding-left: 20px;
+    /* display: inline; */
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+button{
+    padding: 2px 5px ;
+    border-radius: inherit;
+    border: 0px;
+    margin-left: 1rem;
+    width: 10rem;
+}
+
+.hide{
+    display: none;
+}
