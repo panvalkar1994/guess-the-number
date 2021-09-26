@@ -8,7 +8,7 @@ submitButton.addEventListener('click', e=>{
     let inputValue = input.value;
     input.value= '';
     console.log('input value: ', inputValue);
-    if(!(inputValue>=0 && inputValue<=100)){
+    if(!(inputValue>=0 && inputValue<=100) || !inputValue){
         wrongInput(inputValue);
         return
     }else if(inputValue<guess){
@@ -58,7 +58,10 @@ function clearInputHint(){
 }
 
 function wrongInput(value){
-    let errDiv = document.getElementById("err-block")
+    let errDiv = document.getElementById("err-block");
+    if(!value){
+        value = "Empty";
+    }
     errDiv.innerHTML = `${value} is not a valid input. Try a integer between 0-100`;
     errDiv.classList.remove('hide');
 }
