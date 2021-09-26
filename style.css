@@ -61,6 +61,8 @@ input{
     border-radius: .2rem;
     border: none;
     padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
     /* display: inline; */
 }
 
@@ -82,6 +84,7 @@ button{
     border-radius: inherit;
     border: 0px;
     margin-left: 1rem;
+    margin-right: auto;
     width: 10rem;
 }
 
